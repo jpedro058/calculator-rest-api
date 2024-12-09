@@ -1,6 +1,9 @@
 package com.calculatorrestapi.rest.controller;
 
 import com.calculatorrestapi.calculator.CalculatorService;
+import com.calculatorrestapi.calculator.KafkaConsumer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,12 +19,15 @@ import java.util.Map;
 @RequestMapping("/api")
 public class CalculatorController {
 
+    private static final Logger logger = LoggerFactory.getLogger(KafkaConsumer.class);
+
     @Autowired
     CalculatorService calculatorService;
 
     // Helper method to format the response
     private ResponseEntity<Map<String, BigDecimal>> createResponse(BigDecimal result) {
         Map<String, BigDecimal> response = new HashMap<>();
+        logger.info("Operation result: {}", result);
         response.put("result", result);
         return ResponseEntity.ok(response);
     }
@@ -43,17 +49,17 @@ public class CalculatorController {
         // Handle division by zero
         if (b.equals(BigDecimal.ZERO)) {
             Map<String, String> errorResponse = new HashMap<>();
+            logger.error("Cannot divide by zero: {} / {}", a, b);
             errorResponse.put("error", "Cannot divide by zero");
             return ResponseEntity.badRequest().body(errorResponse);
         } else {
             BigDecimal result = calculatorService.divide(a, b);
             Map<String, BigDecimal> successResponse = new HashMap<>();
+            logger.info("Operation result: {}", result);
             successResponse.put("result", result);
             return ResponseEntity.ok(successResponse);
         }
     }
-
-
 
     @GetMapping("/multiply")
     public ResponseEntity<Map<String, BigDecimal>> multiply(@RequestParam BigDecimal a, @RequestParam BigDecimal b) {

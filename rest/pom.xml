@@ -53,6 +53,20 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
+		<!-- SLF4J API -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>2.0.16</version>
+		</dependency>
+
+		<!-- Logback (Implementation of SLF4J) -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.5.12</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -80,5 +94,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
