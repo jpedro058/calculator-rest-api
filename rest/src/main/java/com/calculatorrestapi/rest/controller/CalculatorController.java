@@ -46,18 +46,17 @@ public class CalculatorController {
 
     @GetMapping("/divide")
     public ResponseEntity<?> divide(@RequestParam BigDecimal a, @RequestParam BigDecimal b) {
-        // Handle division by zero
-        if (b.equals(BigDecimal.ZERO)) {
-            Map<String, String> errorResponse = new HashMap<>();
-            logger.error("Cannot divide by zero: {} / {}", a, b);
-            errorResponse.put("error", "Cannot divide by zero");
-            return ResponseEntity.badRequest().body(errorResponse);
-        } else {
+        try {
             BigDecimal result = calculatorService.divide(a, b);
             Map<String, BigDecimal> successResponse = new HashMap<>();
             logger.info("Operation result: {}", result);
             successResponse.put("result", result);
             return ResponseEntity.ok(successResponse);
+        } catch (ArithmeticException e) {
+            Map<String, String> errorResponse = new HashMap<>();
+            logger.error("Error: Division by zero: {} / {}", a, b);
+            errorResponse.put("error", "Cannot divide by zero");
+            return ResponseEntity.badRequest().body(errorResponse);
         }
     }
 

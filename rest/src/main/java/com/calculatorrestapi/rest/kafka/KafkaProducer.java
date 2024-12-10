@@ -1,5 +1,6 @@
 package com.calculatorrestapi.rest.kafka;
 
+import org.slf4j.MDC;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,11 @@ public class KafkaProducer {
     }
 
     public void sendMessage(String topic, String message) {
-        kafkaTemplate.send(topic, message);
+        // Retrieve requestId from MDC
+        String requestId = MDC.get("requestId");
+
+        String enrichedMessage = String.format("requestId: %s, %s", requestId, message);
+
+        kafkaTemplate.send(topic, enrichedMessage);
     }
 }

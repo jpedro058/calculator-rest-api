@@ -77,7 +77,7 @@ class CalculatorControllerTest {
                         .param("a", "6")
                         .param("b", "3"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.result").value("2"));
+                .andExpect(jsonPath("$.result").value("2.0"));
     }
 
     @Test
