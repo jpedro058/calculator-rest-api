@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9cfd61d3-1bd0-4165-8e22-76c979f0bea4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculator/src/main/java/com/calculatorrestapi/calculator/CalculatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/src/main/java/com/calculatorrestapi/calculator/CalculatorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calculator/src/main/java/com/calculatorrestapi/calculator/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/src/main/java/com/calculatorrestapi/calculator/KafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rest/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/com/calculatorrestapi/rest/controller/CalculatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/com/calculatorrestapi/rest/controller/CalculatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/com/calculatorrestapi/rest/controller/KafkaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/com/calculatorrestapi/rest/controller/KafkaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/main/java/com/calculatorrestapi/rest/kafka/KafkaProducer.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/main/java/com/calculatorrestapi/rest/kafka/KafkaProducer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/test/java/com/calculatorrestapi/rest/CalculatorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/test/java/com/calculatorrestapi/rest/CalculatorControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/test/java/com/calculatorrestapi/rest/KafkaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/test/java/com/calculatorrestapi/rest/KafkaControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest/src/test/java/com/calculatorrestapi/rest/KafkaProducerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest/src/test/java/com/calculatorrestapi/rest/KafkaProducerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calculator/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/calculator/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

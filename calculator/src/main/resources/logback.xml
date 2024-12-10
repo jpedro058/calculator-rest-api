@@ -8,7 +8,7 @@
 
     <!-- File Appender -->
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>/Users/joaopedro/Projects/Java/WIT/calculator-api/logs</file>
+        <file>../log</file>
         <append>true</append>
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - [%X{requestId}] %msg%n</pattern>
