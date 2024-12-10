@@ -19,10 +19,12 @@
 	</properties>
 
 	<dependencies>
+		<!-- Use spring-boot-starter-web for Spring MVC instead of WebFlux -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>com.calculatorapi</groupId>
 			<artifactId>calculator</artifactId>
@@ -67,6 +69,13 @@
 			<artifactId>logback-classic</artifactId>
 			<version>1.5.12</version>
 		</dependency>
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>5.0.0</version> <!-- or whatever the latest version is -->
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>

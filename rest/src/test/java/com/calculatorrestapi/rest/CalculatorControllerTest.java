@@ -13,6 +13,8 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.math.BigDecimal;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -31,6 +33,19 @@ class CalculatorControllerTest {
     @InjectMocks
     private CalculatorController calculatorController;
 
+    @Test
+    void testRequestIdHeader() throws Exception {
+        mockMvc.perform(get("/api/sum")
+                        .param("a", "1")
+                        .param("b", "2"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result").value("3"))
+                .andExpect(result -> {
+                    String requestId = result.getResponse().getHeader("X-Request-ID");
+                    assertNotNull(requestId, "Request ID should not be null");
+                    assertFalse(requestId.isEmpty(), "Request ID should not be empty");
+                });
+    }
 
     @Test
     void testSum() throws Exception {
